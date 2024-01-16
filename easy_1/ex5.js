@@ -1,15 +1,17 @@
 /*
-5.Create a simple tip calculator. The program should prompt for a bill amount and a tip rate. 
-The program must compute the tip, and then log both the tip and the total amount of the bill to the console. 
+5.Create a simple tip calculator.
+The program should prompt for a bill amount and a tip rate.
+The program must compute the tip,
+and then log both the tip and the total amount of the bill to the console.
 You can ignore input validation and assume that the user will enter numbers.
 
-Pseudocode: 
+Pseudocode:
 START
-GET input bill amount 
-GET input tip rate 
+GET input bill amount
+GET input tip rate
 SET total bill = bill amount + (tip rate * bill amount / 100)
 PRINT tip rate
-PRINT total bill 
+PRINT total bill
 END
 */
 

@@ -1,65 +1,58 @@
 /*
 6. Write a program that asks the user to enter an integer greater than 0,
- then asks whether the user wants to determine the sum or the product of all numbers between 1 and the entered integer,
+ then asks whether the user wants to determine the sum
+or the product of all numbers between 1 and the entered integer,
 inclusive.
-Pseudocode: 
-START
-GET integer
-GET type of operation 
-SET counter = 1
-IF integer = 1 
-PRINT 1 
-ELSE IF type of operation = sum
-WHLE counter < integer 
-SET claculated number = integer + counter  
-SET integer = calulated number
-SET counter += 1 
-PRINT calculated number 
-ELSE IF type of operation = prouct 
-WHLE counter < integer 
-SET claculated number = integer * counter  
-SET integer = calulated number
-SET counter += 1 
-PRINT calculated number 
-END 
 */
 
+//Ex6.1 - single number input
+
 let readline = require('readline-sync');
-let number = readline.question("Please enter an integer.");
+let number = readline.question("Please enter an integer greater than 0.");
+//validating input
 number = parseInt(number, 10);
+
 let operation = readline.question("Enter 's' to compute the sum, or 'p' to compute the product.");
-
-operation = "p";
-number = 6;
-
-let counter = 2; 
-let addition = 1;
-let multiplication = 1;
-
-if(number == 1) {
-  console.log(1)
+//validating input
+while (!['p', 's'].includes(operation)) {
+  console.log('Must choose p or s!');
+  operation = readline.question("Enter 's' to compute the sum, or 'p' to compute the product.");
 }
-else if (operation == "s") {
+
+let counter = 2;
+let result = 1;
+
+if (number === 1) {
+  console.log(number);
+} else if (operation === "s") {
   while (counter <= number) {
-    addition = counter + addition; 
+    result += counter;
     counter += 1;
   }
-  console.log(addition);
-}
-else if (operation == "p") {
+  console.log(`The sum of all integers between 1 and ${number} is ${result}!`);
+} else if (operation === "p") {
   while (counter <= number) {
-    multipliation = counter * multiplication; 
+    result *= counter;
     counter += 1;
   }
-  console.log(multiplication);
+  console.log(`The product of all integers between 1 and ${number} is ${result}!`);
+} else {
+  console.log("Couldn't compute number - try again.");
 }
-else {
- console.log("Enter a valid number");
+
+// Ex6.2 - compute functions with array input
+/*
+function computeSum(array) {
+  let sum =  array.reduce((accumulator, element) => accumulator + element, 0);
+  console.log(sum);
 }
 
+computeSum([4,5,6]);
 
+function computeProduct(array) {
+  let sum =  array.reduce((accumulator, element) => accumulator * element, 1);
+  console.log(sum);
+}
 
-// 1+2 = 3 
-// 3+3 = 6
-// 6+4 = 10
-//10 + 5 = 15
+computeProduct([4,5,6]);
+*/
