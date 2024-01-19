@@ -1,0 +1,47 @@
+{
+  "welcome": {
+    "EN": "Welcome to Calculator!",
+    "FR": "Bienvenue dans la calculatrice !",
+    "ES": "¡Bienvenido a la calculadora!",
+    "DE": "Willkommen im Taschenrechner!"
+  },
+  "language": {
+    "EN": "What is your preferred language? Type EN, FR, ES, or DE."
+  },  
+  "firstNumber": {
+    "EN": "What's the first number?",
+    "FR": "Quel est le premier nombre ?",
+    "ES": "¿Cuál es el primer número?",
+    "DE": "Was ist die erste Zahl?"
+  },
+  "secondNumber": {
+    "EN": "What's the second number?",
+    "FR": "Quel est le deuxième nombre ?",
+    "ES": "¿Cuál es el segundo número?",
+    "DE": "Was ist die zweite Zahl?"
+  },
+  "invalidNumber": {
+    "EN": "Hmm... that doesn't look like a valid number.",
+    "FR": "Hmm... cela ne semble pas être un nombre valide.",
+    "ES": "Hmm... eso no parece ser un número válido.",
+    "DE": "Hmm... das sieht nicht wie eine gültige Zahl aus."
+  },
+  "whichOperation": {
+    "EN": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "FR": "Quelle opération souhaitez-vous effectuer ?\n1) Additionner 2) Soustraire 3) Multiplier 4) Diviser",
+    "ES": "¿Qué operación te gustaría realizar?\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+    "DE": "Welche Operation möchten Sie durchführen?\n1) Addieren 2) Subtrahieren 3) Multiplizieren 4) Dividieren"
+  },
+  "wrongOperation": {
+    "EN": "Must choose 1, 2, 3, or 4",
+    "FR": "Vous devez choisir 1, 2, 3 ou 4",
+    "ES": "Debe elegir 1, 2, 3 o 4",
+    "DE": "Sie müssen 1, 2, 3 oder 4 auswählen"
+  },
+  "newCalculation": {
+    "EN": "Do you want to perform another calculation? \nType 1 for yes or 2 for no.",
+    "FR": "Voulez-vous effectuer un autre calcul ?\nTapez 1 pur oui ou 2 pour non.",
+    "ES": "¿Quieres realizar otro cálculo? \nEscribe 1 para sí o 2 para no.",
+    "DE": "Möchten Sie eine weitere Berechnung durchführen? \n Tippen Sie 1 fuer ja oder 2 fuer nein ein."
+  }
+}
