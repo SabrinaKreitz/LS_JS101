@@ -10,24 +10,20 @@ Write a function that takes any year greater than 0 as input
  and returns true if the year is a leap year, or false if it is not a leap year.
 
 if not divisible by 4 return false
-if divisible by 4  AND if not divisible by 10 return true
+if divisible by 4  AND if not divisible by 100 return true
 if divisible by 4 AND divisible by 100 AND not divisible by 400 return false
 if divisible by 4 AND divisible by 100 AND divisible by 400 return true
 */
 
 function isLeapYear(year) {
   if (year <= 0) {
-    console.log("The number needs to be greater than 0!");
-  } else if (year % 4 !== 0) {
-    console.log("false");
-  } else if (year % 4 === 0 && year % 100 === 0 && year % 400 !== 0) {
-    console.log("false");
-  } else if (year % 4 === 0 && year % 100 !== 0) {
-    console.log("true");
-  } else if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0) {
-    console.log("true");
+    return ("The number needs to be greater than 0!");
+  } else if (year % 400 === 0) {
+    return true;
+  } else if (year % 100 === 0) {
+    return false;
   } else {
-    console.log("Couldn't compute year - try again!");
+    return year % 4 === 0;
   }
 }
 

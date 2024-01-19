@@ -77,5 +77,5 @@ do {
     prompt (MESSAGE['newCalculation'][userLanguage]);
     answer = readline.question();
   }
-} // 1 represents yes
+} // 1 represents new calculation
 while (answer === "1");
