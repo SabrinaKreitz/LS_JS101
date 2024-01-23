@@ -1,0 +1,9 @@
+{
+  "Welcome" : "Welcome to the loan calculator!",
+  "Amount" : "What is the toal loan amount?",
+  "Error" : "Oops... seems like your input is invalid. Please try again.",
+  "APR" : "What is the Annual Percentage Rate?",
+  "Years" : "What is the loan duration in years?",
+  "Months" : "If applicable, what are the additional months of the loan duration? Otherwise insert 0.",
+  "Repeat" : "Would you like to perform another calculation? If yes, press 1. Otherwise press enter."
+}
