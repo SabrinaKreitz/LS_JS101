@@ -79,3 +79,5 @@ do {
   }
 } // 1 represents new calculation
 while (answer === "1");
+
+

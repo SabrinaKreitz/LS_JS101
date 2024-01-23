@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const MESSAGE = require('./mortgage_message.json');
+const MESSAGE = require('../mortgage_message.json');
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -67,7 +67,7 @@ do {
       additionalMonths);
   }
 
-  console.log(`The expected monthly payment will be $${result.toFixed(2)}!`);
+  console.log(`The expected monthly payment is $${result.toFixed(2)}!`);
 
   prompt(MESSAGE.Repeat);
   answer = readline.question();
