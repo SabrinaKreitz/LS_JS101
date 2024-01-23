@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const MESSAGE = require('../mortgage_message.json');
+const MESSAGE = require('./mortgage_message.json');
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -7,6 +7,10 @@ function prompt(message) {
 
 function isPositiveNumber (number) {
   return Number.isNaN(number) || number <= 0;
+}
+
+function isNumberNotNegative (number) {
+  return Number.isNaN(number) || number < 0;
 }
 
 function monthlyPercentageAsTotal (annualPercentageRate) {
@@ -39,7 +43,7 @@ do {
   // Allows calculation without interest rate
   prompt(MESSAGE.APR);
   let APR = parseFloat(readline.question());
-  while (APR < 0) {
+  while (isNumberNotNegative(APR)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.APR);
     APR = parseFloat(readline.question());
@@ -55,7 +59,7 @@ do {
 
   prompt(MESSAGE.Months);
   let additionalMonths = parseInt(readline.question(), 10);
-  while (additionalMonths < 0) {
+  while (isNumberNotNegative(additionalMonths)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Months);
     additionalMonths = parseInt(readline.question(), 10);
