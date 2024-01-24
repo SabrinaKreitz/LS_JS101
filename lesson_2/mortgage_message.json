@@ -1,9 +1,9 @@
 {
   "Welcome" : "Welcome to the loan calculator!",
   "Amount" : "What is the total loan amount?",
-  "Error" : "Oops... seems like your input is invalid. Please try again.",
+  "Error" : "Oops... seems like your input is invalid. Please enter a positive number.",
   "APR" : "What is the Annual Percentage Rate? For instance 5%.",
   "Years" : "What is the loan duration in years?",
   "Months" : "If applicable, what are the additional months of the loan duration? Otherwise enter 0.",
-  "Repeat" : "Would you like to perform another calculation? If yes, press 1. Otherwise press enter."
+  "Repeat" : "Would you like to perform another calculation? If yes, press 1. To stop, press any other key."
 }

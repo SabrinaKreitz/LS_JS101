@@ -5,11 +5,11 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-function isPositiveNumber (number) {
+function isNumberZeroOrNegative (number) {
   return Number.isNaN(number) || number <= 0;
 }
 
-function isNumberNotNegative (number) {
+function isNumberNegative (number) {
   return Number.isNaN(number) || number < 0;
 }
 
@@ -30,12 +30,13 @@ function monthlyPayment (amount, annualPercentageRate, years, months) {
 let answer;
 let result;
 
+console.clear();
 prompt(MESSAGE.Welcome);
 
 do {
   prompt(MESSAGE.Amount);
   let totalLoan = parseFloat(readline.question());
-  while (isPositiveNumber(totalLoan)) {
+  while (isNumberZeroOrNegative(totalLoan)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Amount);
     totalLoan = parseFloat(readline.question());
@@ -43,7 +44,7 @@ do {
   // Allows calculation without interest rate
   prompt(MESSAGE.APR);
   let APR = parseFloat(readline.question());
-  while (isNumberNotNegative(APR)) {
+  while (isNumberNegative(APR)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.APR);
     APR = parseFloat(readline.question());
@@ -51,7 +52,7 @@ do {
 
   prompt(MESSAGE.Years);
   let loanDurationYears = parseInt(readline.question(), 10);
-  while (isPositiveNumber(loanDurationYears)) {
+  while (isNumberZeroOrNegative(loanDurationYears)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Years);
     loanDurationYears = parseFloat(readline.question());
@@ -59,7 +60,7 @@ do {
 
   prompt(MESSAGE.Months);
   let additionalMonths = parseInt(readline.question(), 10);
-  while (isNumberNotNegative(additionalMonths)) {
+  while (isNumberNegative(additionalMonths)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Months);
     additionalMonths = parseInt(readline.question(), 10);
@@ -75,6 +76,8 @@ do {
 
   prompt(MESSAGE.Repeat);
   answer = readline.question();
+  console.clear();
 } // 1 represents Repeat
 while (answer === '1');
 
+console.log("You have exited the calculator.");
