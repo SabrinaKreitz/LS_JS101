@@ -5,11 +5,11 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-function isNumberZeroOrNegative (number) {
+function isNanZeroOrNegative (number) {
   return Number.isNaN(number) || number <= 0;
 }
 
-function isNumberNegative (number) {
+function isNanOrNegative (number) {
   return Number.isNaN(number) || number < 0;
 }
 
@@ -36,7 +36,7 @@ prompt(MESSAGE.Welcome);
 do {
   prompt(MESSAGE.Amount);
   let totalLoan = parseFloat(readline.question());
-  while (isNumberZeroOrNegative(totalLoan)) {
+  while (isNanZeroOrNegative(totalLoan)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Amount);
     totalLoan = parseFloat(readline.question());
@@ -44,7 +44,7 @@ do {
   // Allows calculation without interest rate
   prompt(MESSAGE.APR);
   let APR = parseFloat(readline.question());
-  while (isNumberNegative(APR)) {
+  while (isNanOrNegative(APR)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.APR);
     APR = parseFloat(readline.question());
@@ -52,7 +52,7 @@ do {
 
   prompt(MESSAGE.Years);
   let loanDurationYears = parseInt(readline.question(), 10);
-  while (isNumberZeroOrNegative(loanDurationYears)) {
+  while (isNanZeroOrNegative(loanDurationYears)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Years);
     loanDurationYears = parseFloat(readline.question());
@@ -60,7 +60,7 @@ do {
 
   prompt(MESSAGE.Months);
   let additionalMonths = parseInt(readline.question(), 10);
-  while (isNumberNegative(additionalMonths)) {
+  while (isNanOrNegative(additionalMonths)) {
     console.log(MESSAGE.Error);
     prompt(MESSAGE.Months);
     additionalMonths = parseInt(readline.question(), 10);
