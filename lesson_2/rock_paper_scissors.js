@@ -1,15 +1,7 @@
-/* eslint-disable no-constant-condition */
-/* eslint-disable complexity */
-
 /*
 P
 A mechanism that counts the wins of each player, then stops the game
 and announces the winner after one of the players achieved three wins.
-
-E
-D
-Input:
-Output:
 
 A
 Create a loop and within the loop, set two counter variables
@@ -56,7 +48,7 @@ function gameEnds(choice, computerChoice) {
     console.log(`Your score is ${userPoints} :)`);
   } else if (computerWins(choice, computerChoice)) {
     computerPoints += 1;
-    console.log(`Computers score is ${computerPoints} :()`);
+    console.log(`Computers score is ${computerPoints} :(`);
   }
 }
 
@@ -76,7 +68,7 @@ function displayWinnerGame() {
   if (userPoints === WINNING_POINTS) {
     console.log('You won the game!');
   } else if (computerPoints === WINNING_POINTS) {
-    console.log('You lost the game!');
+    console.log('You lost the game :(');
   }
 }
 
