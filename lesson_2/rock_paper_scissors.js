@@ -1,17 +1,3 @@
-/*
-P
-A mechanism that counts the wins of each player, then stops the game
-and announces the winner after one of the players achieved three wins.
-
-A
-Create a loop and within the loop, set two counter variables
-- one for winning and one for loosing.
-Within the function there is a winning condition and a loosing condition.
-Whenever one of the conditions is met, the winning or loosing condition
-is incremented by 1 respectively.
-The loop stops when one of the conditions equals 3.
-
-*/
 
 const readline = require('readline-sync');
 const VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
@@ -31,22 +17,19 @@ function userWins(choice, computerChoice) {
   }
 }
 
-function computerWins(choice, computerChoice) {
-  if ((choice === 'rock' && (computerChoice === ('paper') || computerChoice === ('spock'))) ||
-  (choice === 'paper' && (computerChoice === ('scissors') || computerChoice === ('lizard'))) ||
-  (choice === 'scissors' && (computerChoice === ('rock') || computerChoice === ('spock'))) ||
-  (choice === 'spock' && (computerChoice === ('paper') || computerChoice === ('lizard'))) ||
-  (choice === 'lizard' && (computerChoice === ('scissors') || computerChoice === ('rock')))) {
+function computerWins(computerChoice, choice) {
+  if (userWins(computerChoice, choice)) {
     return true;
   } else {
     return false;
   }
 }
+
 function gameEnds(choice, computerChoice) {
   if (userWins(choice, computerChoice)) {
     userPoints += 1;
     console.log(`Your score is ${userPoints} :)`);
-  } else if (computerWins(choice, computerChoice)) {
+  } else if (computerWins(computerChoice, choice)) {
     computerPoints += 1;
     console.log(`Computers score is ${computerPoints} :(`);
   }
@@ -57,7 +40,7 @@ function displayWinnerRound(choice, computerChoice) {
 
   if (userWins(choice, computerChoice)) {
     prompt(`You won this round.`);
-  } else if (computerWins(choice, computerChoice)) {
+  } else if (computerWins(computerChoice, choice)) {
     prompt(`Computer wins this round.`);
   } else {
     prompt("It's a tie!");
@@ -80,7 +63,6 @@ function resetPoints() {
 function prompt(message) {
   console.log(`=> ${message}`);
 }
-
 
 while (true) {
   console.clear();
